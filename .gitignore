@@ -1,6 +1,5 @@
 # Compléter ici !!!!?????
 
 *.log
-*.env
 /build
 node_modules

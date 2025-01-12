@@ -11,7 +11,7 @@ async function cacheData(key, data, ttl) {
   }
   
   module.exports = {
-    //Exporter les fonctions utilitaires
+    //Exporter les fonctions utilitaire
     cacheData
     
   };
