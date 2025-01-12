@@ -1,13 +1,17 @@
 // Question : Comment gérer efficacement le cache avec Redis ?
-// Réponse :
+// Réponse : En utilisant des fonctions utilitaires pour le cache.
 // Question: Quelles sont les bonnes pratiques pour les clés Redis ?
-// Réponse :
+// Réponse : Utiliser des clés explicites et uniques pour chaque donnée.
 
 // Fonctions utilitaires pour Redis
 async function cacheData(key, data, ttl) {
-    // TODO: Implémenter une fonction générique de cache
+    //Implémenter une fonction générique de cache
+    return redisClient.setex(key, ttl, JSON.stringify(data));
+
   }
   
   module.exports = {
-    // TODO: Exporter les fonctions utilitaires
+    //Exporter les fonctions utilitaires
+    cacheData
+    
   };
