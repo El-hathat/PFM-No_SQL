@@ -5,29 +5,22 @@
 const express = require('express');
 const config = require('./config/env');
 const db = require('./config/db');
-
 const courseRoutes = require('./routes/courseRoutes');
-
-
 const app = express();
-
 async function startServer() {
   try {
-    // Initialiser les connexions aux bases de données
+    // TODO: Initialiser les connexions aux base de donnees
     await db.connectMongo();
-    await db.connectRedis();
-
-    //Configurer les middlewares Express
+  //  await db.connectRedis();
+    // TODO: Configurer les middlewares Express
     app.use(express.json());
     app.use(express.urlencoded({ extended: true }));
+    // TODO: Monter les routes
+    app.use('/api', courseRoutes);
 
-
-    //Monter les routes
-    app.use('/courses', courseRoutes);
-
-    //Démarrer le serveur
-    app.listen(config.PORT, () => {
-      console.log(`Server listening on port ${config.PORT}`);
+    // TODO: Démarrer le serveur
+    app.listen(config.port, () => {
+      console.log(`Server started on port ${config.port}`);
     });
 
   } catch (error) {
@@ -38,12 +31,14 @@ async function startServer() {
 
 // Gestion propre de l'arrêt
 process.on('SIGTERM', async () => {
-  //Implémenter la fermeture propre des connexions
-  await db.mongoClient.close();
-  await db.redisClient.quit();
-  console.log('Shutting down server');
-  process.exit(0);
-  
+  // TODO: Implémenter la fermeture propre des connexions
+  try {
+    await db.closeMongo();
+    await db.closeRedis();
+    console.log('Server shutting down...');
+  } catch (error) {
+    console.error('Failed to shutdown server:', error);
+  }
 });
 
 startServer();

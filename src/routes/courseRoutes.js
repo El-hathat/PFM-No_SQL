@@ -8,8 +8,12 @@ const router = express.Router();
 const courseController = require('../controllers/courseController');
 
 // Définir les routes et les fonctions de rappel
-
 router.post('/courses', courseController.createCourse);
+router.get('/teste', courseController.teste);
+router.get('/all', courseController.getAllCourses);
 
+// Ajouter les routes pour findOneById et deleteOne
+router.get('/courses/:id', courseController.findOneById);
+router.delete('/courses/:id', courseController.deleteOne);
 
 module.exports = router;
