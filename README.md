@@ -17,49 +17,71 @@
 
 #### **db.js**
  Question : Pourquoi créer un module séparé pour les connexions aux bases de données ?
+
  Réponse : Pour séparer les responsabilités et faciliter la gestion des connexions.
+
  Question : Comment gérer proprement la fermeture des connexions ?
+
  Réponse : En utilisant des fonctions pour ouvrir et fermer les connexions.
 
 #### **env.js**
  Question: Pourquoi est-il important de valider les variables d'environnement au démarrage ?
+
  Réponse : Pour éviter les erreurs et les comportements inattendus.
+
  Question: Que se passe-t-il si une variable requise est manquante ?
+
  Réponse : Une erreur est levée pour signaler le problème.
 
 #### **courseController.js**
  Question: Quelle est la différence entre un contrôleur et une route ?
+
  Réponse: Un contrôleur contient la logique métier tandis qu'une route définit les points d'entrée de l'API.
+
  Question : Pourquoi séparer la logique métier des routes ?
+
  Réponse : Pour rendre le code plus modulaire et facile à tester.
 
 #### **courseRoutes.js**
  Question: Pourquoi séparer les routes dans différents fichiers ?
+
  Réponse : Pour organiser et structurer le code de manière modulaire.
+
  Question : Comment organiser les routes de manière cohérente ?
+
  Réponse: En regroupant les routes par fonctionnalité ou ressource.
 
 #### **mongoServices.js**
  Question: Pourquoi créer des services séparés ?
+
  Réponse: Pour réutiliser la logique métier et séparer les responsabilités.
 
 #### **redisServices.js**
  Question : Comment gérer efficacement le cache avec Redis ?
+
  Réponse : En utilisant des fonctions utilitaires pour le cache.
+
  Question: Quelles sont les bonnes pratiques pour les clés Redis ?
+ 
  Réponse : Utiliser des clés explicites et uniques pour chaque donnée.
 
 #### **app.js**
  Question: Comment organiser le point d'entrée de l'application ?
+ 
  Réponse : En regroupant les routes et les middlewares dans un seul fichier.
+ 
  Question: Quelle est la meilleure façon de gérer le démarrage de l'application ?
+ 
  Réponse : En utilisant une fonction asynchrone pour initialiser les connexions et démarrer le serveur.
 
  #### **.env**
  Question: Quelles sont les informations sensibles à ne jamais commiter ?
- Réponse : Les informations sensibles à ne jamais commiter sont les clés d'API, les mots de passe, les tokens, les identifiants, les informations de connexion, les informations de paiement, les informations de sécurité, les informations de configuration, les informations de déploiement, les informations de production, les informations de développement, les informations de test, les informations de staging, les informations de pré-production, les informations de post-production, les informations de monitoring, les informations de logging, les informations de traçabilité, les informations de journalisation, les informations de débogage, les informations de profiling, les informations de benchmarking, les informations de performance, les informations de qualité, les informations de sécurité, les informations de confidentialité, les informations de conformité, les informations de gouvernance, les informations de réglementation, les informations de législation, les informations de normes, les informations de standards.
+ 
+ Réponse : Les informations sensibles à ne jamais commiter sont les clés d'API, les mots de passe, les tokens, les identifiants, 
+ les informations de connexion, les informations de paiement, les informations de sécurité, les informations de configuration, les informations de déploiement, les informations de production, les informations de développement, les informations de test, les informations de staging, les informations de pré-production, les informations de post-production, les informations de monitoring, les informations de logging, les informations de traçabilité, les informations de journalisation, les informations de débogage, les informations de profiling, les informations de benchmarking, les informations de performance, les informations de qualité, les informations de sécurité, les informations de confidentialité, les informations de conformité, les informations de gouvernance, les informations de réglementation, les informations de législation, les informations de normes, les informations de standards.
 
  Question: Pourquoi utiliser des variables d'environnement ?
+
  Réponse : Les variables d'environnement sont utilisées pour stocker des informations sensibles et des configurations spécifiques à l'environnement de développement, de test, de staging, de production, de pré-production, de post-production, de monitoring, de logging, de traçabilité, de journalisation, de débogage, de profiling, de benchmarking, de performance, de qualité, de sécurité, de confidentialité, de conformité, de gouvernance, de réglementation, de législation, de normes, de standards.
 
 
